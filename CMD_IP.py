@@ -6,7 +6,7 @@ from pythonping import ping
 
 # Function to feed commands to shell
 def out(command):
-    result = run(command, stdout=PIPE, stderr=PIPE, universal_newlines=True, shell=True)
+    result = run(command, stdout = PIPE, stderr = PIPE, universal_newlines = True, shell = True)
     return result.stdout
 
 # Creating a list of CMD Output and removing empty Strings
@@ -24,13 +24,13 @@ for line in CMDout:
     IPAppend = pattern.search(line)
     if len(str(IPAppend)) > 10:
         IPList.append(str(IPAppend).split("match='", 1)[1][:-2])
+print(IPList)
 
 # Displaying IPs to User
 for i in IPList: print(i)
-uPingChoice = False
 
 # Asking if the user wants a Ping Test
-
+uPingChoice = False
 while(1):
     uIn = input("Ping Test? (y/n)\n").lower()
     if uIn == 'y':
